@@ -15,7 +15,7 @@
 
 ### 1. Deskripsi Singkat Program
 
-Sistem Gudang Internet Comtelindo adalah program Java sederhana berbasis *console* yang digunakan untuk mengelola data barang atau perangkat di gudang, seperti modem, kabel, router, dan sejenisnya. Program ini menggunakan `ArrayList` untuk menyimpan data selama aplikasi berjalan, sehingga data akan hilang begitu program ditutup (belum tersimpan permanen ke database atau file).
+  Sistem Gudang Internet Comtelindo adalah program Java sederhana berbasis *console* yang digunakan untuk mengelola data barang atau perangkat di gudang, seperti modem, kabel, router, dan sejenisnya. Program ini menggunakan `ArrayList` untuk menyimpan data selama aplikasi berjalan, sehingga data akan hilang begitu program ditutup (belum tersimpan permanen ke database atau file).
 
 Lewat program ini, pengguna dapat menambahkan barang baru, melihat seluruh data barang yang ada, mencari barang tertentu menggunakan ID, memperbarui data barang jika ada perubahan, hingga menghapus data barang yang sudah tidak digunakan lagi. Semua fitur tersebut dikemas secara praktis dalam satu menu utama yang dapat dipilih menggunakan opsi angka.
 
@@ -32,7 +32,7 @@ Program ini mengimplementasikan fitur CRUD (*Create, Read, Update, Delete*) sert
 
 <h3>2.Encapsulation</h3>
 
-semua atribut seperti id, namaBarang, kategori, harga, dan stok dibuat dengan modifier protected, bukan public. Artinya, atribut-atribut ini tidak bisa diakses atau diubah sembarangan dari luar class  harus lewat method getter dan setter yang sudah disediakan.
+  semua atribut seperti id, namaBarang, kategori, harga, dan stok dibuat dengan modifier protected, bukan public. Artinya, atribut-atribut ini tidak bisa diakses atau diubah sembarangan dari luar class  harus lewat method getter dan setter yang sudah disediakan.
 
 - Dibawah Ini ialah kodenya Di Class Barang Java
 
@@ -71,7 +71,7 @@ semua atribut seperti id, namaBarang, kategori, harga, dan stok dibuat dengan mo
 
 <h3>3.Inheritance</h3>
 
-Kabel Jaringan extends Barang dan PerangkatJaringan extends Barang. Kedua class anak ini otomatis "mewarisi" semua atribut dan method dari Barang  jadi mereka tidak perlu menulis ulang id, namaBarang, harga, stok, dll, cukup tinggal pakai. Yang mereka lakukan hanyalah menambahkan atribut khusus sesuai kebutuhan masing-masing: KabelJaringan menambahkan panjangMeter dan jenisKabel, sedangkan PerangkatJaringan menambahkan merek dan garansiBulan.
+  Kabel Jaringan extends Barang dan PerangkatJaringan extends Barang. Kedua class anak ini otomatis "mewarisi" semua atribut dan method dari Barang  jadi mereka tidak perlu menulis ulang id, namaBarang, harga, stok, dll, cukup tinggal pakai. Yang mereka lakukan hanyalah menambahkan atribut khusus sesuai kebutuhan masing-masing: KabelJaringan menambahkan panjangMeter dan jenisKabel, sedangkan PerangkatJaringan menambahkan merek dan garansiBulan.
 
 - Dibawah Ini ialah kodenya Di Class Kabel Jaringan
 
@@ -95,7 +95,7 @@ Kabel Jaringan extends Barang dan PerangkatJaringan extends Barang. Kedua class 
 
 <h3>4.Polymorphism</h3>
 
-yaitu overloading dan overriding. Bentuk pertama, overloading, terlihat pada method tambahBarang() di class BarangService, yang ditulis tiga kali dengan nama yang sama namun jumlah dan tipe parameter yang berbeda. Java secara otomatis akan memilih versi method mana yang dijalankan berdasarkan data yang dikirim jika hanya diberikan data dasar (nama, kategori, harga, stok), maka akan dibuat objek Barang biasa; namun jika disertakan merek dan garansiBulan, method akan otomatis membuat objek PerangkatJaringan, begitu juga jika disertakan panjangMeter dan jenisKabel, maka yang dibuat adalah KabelJaringan. Dengan begitu, satu nama method dapat memiliki beberapa perilaku berbeda tergantung konteks pemanggilannya.
+  yaitu overloading dan overriding. Bentuk pertama, overloading, terlihat pada method tambahBarang() di class BarangService, yang ditulis tiga kali dengan nama yang sama namun jumlah dan tipe parameter yang berbeda. Java secara otomatis akan memilih versi method mana yang dijalankan berdasarkan data yang dikirim jika hanya diberikan data dasar (nama, kategori, harga, stok), maka akan dibuat objek Barang biasa; namun jika disertakan merek dan garansiBulan, method akan otomatis membuat objek PerangkatJaringan, begitu juga jika disertakan panjangMeter dan jenisKabel, maka yang dibuat adalah KabelJaringan. Dengan begitu, satu nama method dapat memiliki beberapa perilaku berbeda tergantung konteks pemanggilannya.
 
 <h3>Method Overloading</h3> 
 
@@ -148,7 +148,11 @@ yaitu overloading dan overriding. Bentuk pertama, overloading, terlihat pada met
 
 <h3>abstraction</h3> 
 
-Abstraksi adalah teknik dalam Pemrograman Berorientasi Objek untuk menyembunyikan detail implementasi yang rumit dan hanya menampilkan fungsionalitas esensial kepada pengguna. Teknik ini digunakan untuk memisahkan antara rancangan aturan (WHAT TO DO) dengan detail pengerjaannya (HOW TO DO).
+  Abstraksi adalah teknik dalam Pemrograman Berorientasi Objek untuk menyembunyikan detail implementasi yang rumit dan hanya menampilkan fungsionalitas esensial kepada pengguna. Teknik ini digunakan untuk memisahkan antara rancangan aturan (WHAT TO DO) dengan detail pengerjaannya (HOW TO DO).Abstract class merupakan kelas abstrak yang digunakan untuk menentukan karakteristik dari sebuah kelas, yaitu kelas yang sengaja dibuat tidak lengkap agar strukturnya bisa diikuti oleh subclass-nya. Abstract class tidak bisa dibuat menjadi objek secara langsung, melainkan harus diturunkan (extends) terlebih dahulu ke subclass baru bisa digunakan. Abstract class dapat memiliki property, method yang belum berisi (abstract method), dan method yang sudah berisi, di mana method yang belum berisi tersebut nantinya wajib dilengkapi oleh subclass yang menurunkannya.
+
+<h3>Interface</h3> 
+
+  Interface merupakan tipe abstrak yang digunakan untuk menentukan karakteristik dari sebuah kelas, dan merupakan bentuk abstraksi paling murni karena bukan kelas, melainkan sebuah kontrak perjanjian. Interface hanya berisi kontrak berupa method tanpa isi, sehingga kelas yang meng-implement wajib mengisi seluruh method tersebut. Berbeda dengan abstract class yang hanya boleh diturunkan dari satu induk, sebuah class bisa meng-implement lebih dari satu interface sekaligus.
 
 <h3>5.Penjelasan alur program</h3>
 
