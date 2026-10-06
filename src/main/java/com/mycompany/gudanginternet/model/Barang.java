@@ -1,14 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.mycompany.gudanginternet;
+package com.mycompany.gudanginternet.model;
 
-/**
- *
- * @author ASUS
- */
-public class Barang {
+public abstract class Barang {
     protected int id;
     protected String namaBarang;
     protected String kategori;
@@ -22,6 +14,7 @@ public class Barang {
         setHarga(harga);
         setStok(stok);
     }
+
     public int getId() {
         return id;
     }
@@ -69,6 +62,7 @@ public class Barang {
         }
         this.stok = stok;
     }
+
     public void tampilkanInfo() {
         System.out.println("ID Barang   : " + id);
         System.out.println("Nama Barang : " + namaBarang);
@@ -76,6 +70,16 @@ public class Barang {
         System.out.println("Harga       : Rp" + String.format("%,.0f", harga));
         System.out.println("Stok        : " + stok);
     }
+
+    public void tampilkanInfo(boolean ringkas) {
+        if (ringkas) {
+            System.out.println(namaBarang + " (ID: " + id + ")");
+        } else {
+            tampilkanInfo();
+        }
+    }
+
+    public abstract void caraPenyimpanan();
 
     @Override
     public String toString() {

@@ -1,6 +1,10 @@
-D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\Barang.java
-D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\BarangService.java
-D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\KabelJaringan.java
-D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\Main.java
-D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\PerangkatJaringan.java
-D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\Validator.java
+D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\controller\BarangController.java
+D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\main\MainApp.java
+D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\model\Barang.java
+D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\model\BarangUmum.java
+D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\model\Bergaransi.java
+D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\model\Diskon.java
+D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\model\KabelJaringan.java
+D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\model\PerangkatJaringan.java
+D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\view\BarangView.java
+D:\GudangInternet\src\main\java\com\mycompany\gudanginternet\view\Validator.java

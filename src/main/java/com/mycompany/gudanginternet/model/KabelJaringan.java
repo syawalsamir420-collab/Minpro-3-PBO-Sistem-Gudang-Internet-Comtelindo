@@ -1,17 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.mycompany.gudanginternet;
+package com.mycompany.gudanginternet.model;
 
-/**
- * KabelJaringan - SUBCLASS dari Barang
- * Contoh: Kabel UTP, Kabel Fiber Optik.
- * Menambahkan atribut khusus: panjang (meter) dan jenis kabel.
- *
- * @author ASUS
- */
-public class KabelJaringan extends Barang {
+public class KabelJaringan extends Barang implements Diskon {
     private double panjangMeter;
     private String jenisKabel;
 
@@ -50,6 +39,19 @@ public class KabelJaringan extends Barang {
         super.tampilkanInfo();
         System.out.println("Panjang     : " + panjangMeter + " meter");
         System.out.println("Jenis Kabel : " + jenisKabel);
+    }
+
+    @Override
+    public void caraPenyimpanan() {
+        System.out.println("Cara penyimpanan: Digulung rapi dan disimpan di drum kabel.");
+    }
+
+    @Override
+    public double hitungHargaSetelahDiskon(double persenDiskon) {
+        if (persenDiskon < 0 || persenDiskon > 100) {
+            throw new IllegalArgumentException("Persen diskon harus 0-100");
+        }
+        return harga - (harga * persenDiskon / 100);
     }
 
     @Override

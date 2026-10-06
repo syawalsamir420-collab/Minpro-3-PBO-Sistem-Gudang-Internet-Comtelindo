@@ -1,20 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.mycompany.gudanginternet;
+package com.mycompany.gudanginternet.model;
 
-/**
- *
- * @author ASUS
- */
-public class PerangkatJaringan extends Barang {
+public class PerangkatJaringan extends Barang implements Bergaransi {
     private String merek;
     private int garansiBulan;
 
     public PerangkatJaringan(int id, String namaBarang, String kategori, double harga, int stok,
             String merek, int garansiBulan) {
-        super(id, namaBarang, kategori, harga, stok); // keyword 'super' -> panggil constructor superclass
+        super(id, namaBarang, kategori, harga, stok);
         setMerek(merek);
         setGaransiBulan(garansiBulan);
     }
@@ -40,12 +32,35 @@ public class PerangkatJaringan extends Barang {
         }
         this.garansiBulan = garansiBulan;
     }
+
+    @Override
     public void tampilkanInfo() {
         System.out.println("--- [PERANGKAT JARINGAN] ---");
         super.tampilkanInfo();
         System.out.println("Merek       : " + merek);
         System.out.println("Garansi     : " + garansiBulan + " bulan");
     }
+
+    @Override
+    public void caraPenyimpanan() {
+        System.out.println("Cara penyimpanan: Simpan di rak elektronik, hindari suhu lembap.");
+    }
+
+    @Override
+    public void klaimGaransi() {
+        if (garansiBulan > 0) {
+            System.out.println(namaBarang + " masih bergaransi " + garansiBulan + " bulan.");
+        } else {
+            System.out.println(namaBarang + " sudah tidak bergaransi.");
+        }
+    }
+
+    @Override
+    public int getSisaGaransiBulan() {
+        return garansiBulan;
+    }
+
+    @Override
     public String toString() {
         return super.toString() + String.format(" | %-10s | %2d bln", merek, garansiBulan);
     }
