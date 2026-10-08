@@ -1,4 +1,3 @@
-<img width="517" height="96" alt="image" src="https://github.com/user-attachments/assets/50486d9e-5385-4d57-9c47-3bac968268b5" /><div align="justify">
 
 # Gudang Internet Comtelindo
 # MINPRO 3 PBO
